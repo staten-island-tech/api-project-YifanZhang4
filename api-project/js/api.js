@@ -1,13 +1,12 @@
-const apiURL = "https://api.quotable.io/random";
-
-async function getRandomQuote(apiURL) {
+async function getRandomCard() {
   try {
-    const response = await fetch(apiURL);
-    const data = await response.json(); //makes data into usable json object
-    document.getElementById("randomquote").textContent = data.content;
-    console.log(data.content);
+    const response = await fetch(`https://api.tcgdex.net/v2/en/cards`);
+    const data = await response.json();
+    console.log("done");
+    return data;
   } catch (error) {
     console.log(error);
   }
+  data.forEach((card) => console.log(card.id));
 }
-getRandomQuote(apiURL);
+getRandomCard();
