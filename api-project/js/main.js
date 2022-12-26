@@ -1,2 +1,2 @@
 import "../styles/style.css";
-import "/js/api.js";
+import "/js/api.js"
