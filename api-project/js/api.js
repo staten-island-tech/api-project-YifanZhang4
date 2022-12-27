@@ -1,13 +1,17 @@
-const apiURL = "https://api.quotable.io/random";
+const operatorList = document.getElementById("operatorList");
+let operators = [];
 
-async function getRandomQuote(apiURL) {
+const loadCharacters = async () => {
   try {
-    const response = await fetch(apiURL);
-    const data = await response.json(); //makes data into usable json object
-    document.getElementById("randomquote").textContent = data.content;
-    console.log(data.content);
-  } catch (error) {
-    console.log(error);
+      const res = await fetch('https://rhodesapi.cyclic.app/api/operator');
+      const RIOperators = await res.json();
+      displayOperators(RIOperators);
+      console.log(RIOperators);
+  } catch (err) {
+      console.error(err);
   }
-}
-getRandomQuote(apiURL);
+};
+
+import { displayOperators } from "./main";
+
+loadCharacters();

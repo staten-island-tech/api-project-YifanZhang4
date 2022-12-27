@@ -5,9 +5,41 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
-  background-color: lightpink;
 }
 
-#ranbdomquote {
-  font-size: 5rem;
+.container {
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+#operatorList {
+  padding-inline-start: 0;
+  display: flex;
+  flex-flow: row wrap;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1rem));
+  grid-gap: 20px;
+}
+
+.operatorCard {
+  list-style-type: none;
+  background-color: #eaeaea;
+  border-radius: 3px;
+  padding: 10px 10px;
+  margin: auto;
+}
+
+#search {
+  width: 100%;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.img {
+max-width: 20rem;
+max-height: 20rem;
 }
