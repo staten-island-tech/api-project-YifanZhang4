@@ -28,6 +28,12 @@ html {
   border-radius: 3px;
   padding: 10px 10px;
   margin: auto;
+  font-size: 2rem;
+}
+
+.operatorCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0.5rem #000000;
 }
 
 #search {
@@ -39,7 +45,26 @@ html {
   font-size: 12px;
 }
 
+#searchEnter,
+#searchClear {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5rem;
+  transition: all 0.2s;
+}
+
+#searchEnter:hover,
+#searchClear:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0.5rem #000000;
+}
+
 .img {
-max-width: 20rem;
-max-height: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
 }

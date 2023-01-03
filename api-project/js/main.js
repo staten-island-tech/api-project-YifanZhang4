@@ -1,8 +1,9 @@
 import "../styles/style.css";
 import "./api";
-import { DOMSelectors } from "./dom";
+import "./dom";
 
 search.addEventListener("keyup", (event) => {
+  event.preventDefault();
   const searchString = event.target.value;
   console.log(searchString);
   const filteredOperators = operators.filter((operator) => {
@@ -12,18 +13,18 @@ search.addEventListener("keyup", (event) => {
 });
 
 const displayOperators = (operators) => {
-    const htmlString = operators
-        .map((operator) => {
-            return `
+  const htmlString = operators
+    .map((operator) => {
+      return `
             <li class="operatorCard">
                 <h2>${operator.name}</h2>
                 <p>Class: ${operator.class}</p>
                 <img src="${operator.art.Base}" class="img"></img>
             </li>
         `;
-        })
-        .join('');
-    operatorList.innerHTML = htmlString;
-  };
+    })
+    .join("");
+  operatorList.innerHTML = htmlString;
+};
 
-  export {displayOperators};
+export { displayOperators };

@@ -3,12 +3,12 @@ let operators = [];
 
 const loadCharacters = async () => {
   try {
-      const res = await fetch('https://rhodesapi.cyclic.app/api/operator');
-      const RIOperators = await res.json();
-      displayOperators(RIOperators);
-      console.log(RIOperators);
+    const res = await fetch("https://rhodesapi.cyclic.app/api/operator");
+    const operators = await res.json();
+    displayOperators(operators);
+    console.log(operators);
   } catch (err) {
-      console.error(err);
+    console.error(err);
   }
 };
 
