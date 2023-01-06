@@ -1,5 +1,4 @@
 const operatorList = document.getElementById("operatorList");
-let operators = [];
 
 const loadCharacters = async () => {
   try {
@@ -7,9 +6,10 @@ const loadCharacters = async () => {
     if (res.status < 200 || res.stats > 299) {
       throw Error(res.status);
     } else {
-      const operators = await res.json();
-      displayOperators(operators);
-      console.log(operators);
+      const operatorlist = await res.json();
+      displayOperators(operatorlist);
+      console.log(operatorlist);
+      return operatorlist;
     }
   } catch (err) {
     console.log("ERROR");
@@ -19,7 +19,6 @@ const loadCharacters = async () => {
 };
 
 import { displayOperators } from "./main";
-
 loadCharacters();
 
 console.log("api connected");

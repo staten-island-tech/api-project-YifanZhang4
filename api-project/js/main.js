@@ -2,19 +2,17 @@ import "../styles/style.css";
 import "./api";
 import { DOMSelectors } from "./dom";
 
-DOMSelectors.search.addEventListener("keyup", (event) => {
-  event.preventDefault();
-  const value = event.target;
-  const string = value.toString();
-  const query = string.toLowerCase();
-  let name = document.querySelectorAll(".op-name");
-  let card = document.querySelectorAll(".operatorCard");
-  let nameString = name.toString();
-  if (nameString.includes(query)) {
-    card.style.display = "block";
-  } else {
-    card.style.display = "none";
-  }
+DOMSelectors.search.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  const searchString = e.target.value;
+  console.log(searchString);
+  const filteredOperators = operators.filter((operator) => {
+    return (
+      operator.name.toLowerCase().includes(searchString) ||
+      operator.class.toLowerCase().includes(searchString)
+    );
+  });
+  displayCharacters(filteredOperators);
 });
 
 DOMSelectors.searchClear.addEventListener("click", () => {});
