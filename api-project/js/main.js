@@ -1,6 +1,5 @@
 import "../styles/style.css";
 import "./api";
-import { DOMSelectors } from "./dom";
 
 
 
@@ -19,11 +18,5 @@ const displayOperators = (operatorlist) => {
   operatorList.innerHTML = htmlString;
 };
 
-function remove() {
-  const cards = document.querySelectorAll(".operatorCard");
-  cards.forEach((card) => {
-    card.remove();
-  });
-};
 
 export { displayOperators };
