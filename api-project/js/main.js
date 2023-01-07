@@ -2,23 +2,10 @@ import "../styles/style.css";
 import "./api";
 import { DOMSelectors } from "./dom";
 
-DOMSelectors.search.addEventListener("keyup", (e) => {
-  e.preventDefault();
-  const searchString = e.target.value;
-  console.log(searchString);
-  const filteredOperators = operators.filter((operator) => {
-    return (
-      operator.name.toLowerCase().includes(searchString) ||
-      operator.class.toLowerCase().includes(searchString)
-    );
-  });
-  displayCharacters(filteredOperators);
-});
 
-DOMSelectors.searchClear.addEventListener("click", () => {});
 
-const displayOperators = (operators) => {
-  const htmlString = operators
+const displayOperators = (operatorlist) => {
+  const htmlString = operatorlist
     .map((operator) => {
       return `
             <li class="operatorCard">
@@ -30,6 +17,13 @@ const displayOperators = (operators) => {
     })
     .join("");
   operatorList.innerHTML = htmlString;
+};
+
+function remove() {
+  const cards = document.querySelectorAll(".operatorCard");
+  cards.forEach((card) => {
+    card.remove();
+  });
 };
 
 export { displayOperators };

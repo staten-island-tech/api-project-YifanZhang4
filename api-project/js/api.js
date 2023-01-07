@@ -1,4 +1,4 @@
-const operatorList = document.getElementById("operatorList");
+let operatorlist = [];
 
 const loadCharacters = async () => {
   try {
@@ -20,5 +20,24 @@ const loadCharacters = async () => {
 
 import { displayOperators } from "./main";
 loadCharacters();
+
+import { DOMSelectors } from "./dom";
+DOMSelectors.searchEnter.addEventListener("click", function(event)  {
+  event.preventDefault();
+  const searchString = event.target.value.toLowerCase();
+  console.log(searchString);
+  remove();
+  operatorlist.filter((operator) => 
+      operator.name.toLowerCase().includes(searchString) ||
+      operator.class.toLowerCase().includes(searchString)).forEach((filteredOperators) =>
+  console.log(filteredOperators.class));
+});
+
+function remove() {
+  const cards = document.querySelectorAll(".operatorCard");
+  cards.forEach((card) => {
+    card.remove();
+  });
+};
 
 console.log("api connected");
