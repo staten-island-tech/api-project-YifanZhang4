@@ -1,35 +1,50 @@
 import "../styles/style.css";
 import "./api";
 import { DOMSelectors } from "./dom";
+import { loadCharacters } from "./api";
 
-DOMSelectors.search.addEventListener("keyup", (e) => {
+DOMSelectors.vanguard.addEventListener("click", async function (e) {
   e.preventDefault();
-  const searchString = e.target.value;
-  console.log(searchString);
-  const filteredOperators = operators.filter((operator) => {
-    return (
-      operator.name.toLowerCase().includes(searchString) ||
-      operator.class.toLowerCase().includes(searchString)
-    );
-  });
-  displayCharacters(filteredOperators);
+  buttons.remove();
+  buttons.vanguards();
 });
-
-DOMSelectors.searchClear.addEventListener("click", () => {});
-
-const displayOperators = (operators) => {
-  const htmlString = operators
-    .map((operator) => {
-      return `
-            <li class="operatorCard">
-                <h2 class="op-name">${operator.name}</h2>
-                <p>Class: ${operator.class}</p>
-                <img src="${operator.art.Base}" class="img"></img>
-            </li>
-        `;
-    })
-    .join("");
-  operatorList.innerHTML = htmlString;
+// async function testW() {
+//   let data = await loadCharacters();
+//   console.log(data);
+// }
+// testW();
+const buttons = {
+  vanguards: async function () {
+    try {
+      const data = await loadCharacters();
+      data
+        .filter((operators) => operators.class === "Vanguard")
+        .forEach((vanguard) =>
+          this.createCard(vanguard.name, vanguard.class, vanguard.art.Base)
+        );
+      console.log(data);
+    } catch (err) {
+      console.log("ERROR");
+      document.getElementById("filter-response").textContent =
+        "AHGFVKBSDFGAKEF :(";
+    }
+  },
+  createCard: function () {
+    DOMSelectors.list.insertAdjacentHTML(
+      "beforeend",
+      `
+    <li class="operatorCard">
+        <h2 class="op-name" >${operator.name}</h2>
+        <p>Class: ${operator.class}</p>
+        <img src="${operator.art.Base}" class="img"></img>
+    </li>
+`
+    );
+  },
+  remove: function () {
+    const cards = document.querySelectorAll(".operatorCard");
+    cards.forEach((card) => {
+      card.remove();
+    });
+  },
 };
-
-export { displayOperators };
