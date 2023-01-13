@@ -1,4 +1,4 @@
-import { DOMSelectors } from "./dom";
+const operatorList = document.getElementById("operatorList");
 
 const loadCharacters = async () => {
   try {
@@ -29,4 +29,5 @@ const loadCharacters = async () => {
 };
 
 loadCharacters();
-export { loadCharacters };
+
+console.log("api connected");
