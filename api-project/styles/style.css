@@ -36,17 +36,7 @@ html {
   box-shadow: 0 5px 0.5rem #000000;
 }
 
-#search {
-  width: 100%;
-  height: 32px;
-  border-radius: 3px;
-  border: 1px solid #eaeaea;
-  padding: 5px 10px;
-  font-size: 12px;
-}
-
-#searchEnter,
-#searchClear {
+button {
   text-transform: uppercase;
   text-decoration: none;
   padding: 0.5rem 2rem;
@@ -58,8 +48,7 @@ html {
   transition: all 0.2s;
 }
 
-#searchEnter:hover,
-#searchClear:hover {
+button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 0.5rem #000000;
 }
@@ -67,4 +56,9 @@ html {
 .img {
   max-width: 20rem;
   max-height: 20rem;
+}
+
+#api-response,
+#filter-response {
+  font-size: 10rem;
 }
