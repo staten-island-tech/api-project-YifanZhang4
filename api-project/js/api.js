@@ -7,27 +7,18 @@ const loadCharacters = async () => {
       throw Error(res.status);
     } else {
       const operatorlist = await res.json();
-      operatorlist.forEach((operator) => {
-        DOMSelectors.list.insertAdjacentHTML(
-          "beforeend",
-          `
-        <li class="operatorCard">
-            <h2 class="op-name" >${operator.name}</h2>
-            <p>Class: ${operator.class}</p>
-            <img src="${operator.art.Base}" class="img"></img>
-        </li>
-    `
-        );
-      });
-      // console.log(operatorlist);
+      displayOperators(operatorlist);
+      console.log(operatorlist);
       return operatorlist;
     }
   } catch (err) {
     console.log("ERROR");
-    document.getElementById("api-response").textContent = "oopsie woopsie :(";
+    document.getElementById("api-response").textContent =
+      "Sorry, something went wrong :(";
   }
 };
 
+import { displayOperators } from "./main";
 loadCharacters();
 
 console.log("api connected");

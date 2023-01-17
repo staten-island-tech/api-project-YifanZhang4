@@ -1,7 +1,7 @@
 const DOMSelectors = {
   search: document.getElementById("search"),
-  list: document.getElementById("operatorList"),
-  vanguard: document.getElementById("vanguards"),
+  searchEnter: document.getElementById("searchEnter"),
+  searchClear: document.getElementById("searchClear"),
 };
 
 export { DOMSelectors };

@@ -45,7 +45,8 @@ html {
   font-size: 12px;
 }
 
-button {
+#searchEnter,
+#searchClear {
   text-transform: uppercase;
   text-decoration: none;
   padding: 0.5rem 2rem;
@@ -56,7 +57,9 @@ button {
   border-radius: 5rem;
   transition: all 0.2s;
 }
-button:hover {
+
+#searchEnter:hover,
+#searchClear:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 0.5rem #000000;
 }
@@ -64,9 +67,4 @@ button:hover {
 .img {
   max-width: 20rem;
   max-height: 20rem;
-}
-
-#api-response,
-#filter-response {
-  font-size: 10rem;
 }
