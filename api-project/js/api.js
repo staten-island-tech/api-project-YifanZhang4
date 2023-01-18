@@ -19,7 +19,6 @@ const loadCharacters = async () => {
       // `
       //     );
       //   });
-      console.log(operatorlist);
       return operatorlist;
     }
   } catch (err) {
