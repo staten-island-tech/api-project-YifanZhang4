@@ -14,7 +14,12 @@ const buttons = {
     try {
       const data = await loadCharacters();
       data.forEach((operator) =>
-        this.createCard(operator.name, operator.tags, operator.art.Base)
+        this.createCard(
+          operator.name,
+          operator.tags,
+          operator.art.Base,
+          operator.description
+        )
       );
     } catch (err) {
       console.log("ERROR allops");
@@ -27,7 +32,12 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Vanguard"))
         .forEach((vanguard) =>
-          this.createCard(vanguard.name, vanguard.tags, vanguard.art.Base)
+          this.createCard(
+            vanguard.name,
+            vanguard.tags,
+            vanguard.art.Base,
+            vanguard.description
+          )
         );
     } catch (err) {
       console.log("ERROR VANGUARD");
@@ -40,7 +50,12 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Guard"))
         .forEach((guard) =>
-          this.createCard(guard.name, guard.tags, guard.art.Base)
+          this.createCard(
+            guard.name,
+            guard.tags,
+            guard.art.Base,
+            guard.description
+          )
         );
     } catch (err) {
       console.log("ERROR GUARD");
@@ -53,7 +68,12 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Defender"))
         .forEach((defender) =>
-          this.createCard(defender.name, defender.tags, defender.art.Base)
+          this.createCard(
+            defender.name,
+            defender.tags,
+            defender.art.Base,
+            defender.description
+          )
         );
     } catch (err) {
       console.log("ERROR DEFENDER");
@@ -66,7 +86,12 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Sniper"))
         .forEach((sniper) =>
-          this.createCard(sniper.name, sniper.tags, sniper.art.Base)
+          this.createCard(
+            sniper.name,
+            sniper.tags,
+            sniper.art.Base,
+            sniper.description
+          )
         );
     } catch (err) {
       console.log("ERROR SNIPER");
@@ -79,7 +104,12 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Caster"))
         .forEach((caster) =>
-          this.createCard(caster.name, caster.tags, caster.art.Base)
+          this.createCard(
+            caster.name,
+            caster.tags,
+            caster.art.Base,
+            caster.description
+          )
         );
     } catch (err) {
       console.log("ERROR CASTER");
@@ -92,7 +122,12 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Medic"))
         .forEach((medic) =>
-          this.createCard(medic.name, medic.tags, medic.art.Base)
+          this.createCard(
+            medic.name,
+            medic.tags,
+            medic.art.Base,
+            medic.description
+          )
         );
     } catch (err) {
       console.log("ERROR MEDIC");
@@ -105,7 +140,12 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Supporter"))
         .forEach((supporter) =>
-          this.createCard(supporter.name, supporter.tags, supporter.art.Base)
+          this.createCard(
+            supporter.name,
+            supporter.tags,
+            supporter.art.Base,
+            supporter.description
+          )
         );
     } catch (err) {
       console.log("ERROR SUPPORTER");
@@ -118,21 +158,26 @@ const buttons = {
       data
         .filter((operators) => operators.tags.includes("Specialist"))
         .forEach((specialist) =>
-          this.createCard(specialist.name, specialist.tags, specialist.art.Base)
+          this.createCard(
+            specialist.name,
+            specialist.tags,
+            specialist.art.Base,
+            specialist.description
+          )
         );
     } catch (err) {
       console.log("ERROR SPECIALIST");
       document.getElementById("filter-response").textContent = "Error :(";
     }
   },
-  createCard: function (name, tags, art) {
+  createCard: function (name, tags, art, description) {
     DOMSelectors.list.insertAdjacentHTML(
       "beforeend",
       `
       <li class="operatorCard">
           <h2 class="op-name" >${name}</h2>
           <p>Tags: ${tags}</p>
-          <img src="${art}" class="img"></img>
+          <img src="${art}" alt="${description}"class="img"></img>
       </li>
   `
     );
