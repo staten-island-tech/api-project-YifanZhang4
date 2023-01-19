@@ -1,5 +1,6 @@
 const DOMSelectors = {
   list: document.getElementById("operatorList"),
+  search: document.getElementById("search"),
   all: document.getElementById("all"),
   vanguard: document.getElementById("vanguards"),
   guard: document.getElementById("guards"),

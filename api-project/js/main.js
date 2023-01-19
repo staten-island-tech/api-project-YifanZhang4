@@ -8,6 +8,7 @@ import { loadCharacters } from "./api";
 //   console.log(data);
 // }
 // testW();
+
 const buttons = {
   allops: async function () {
     try {
