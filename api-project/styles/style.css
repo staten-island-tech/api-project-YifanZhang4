@@ -5,6 +5,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: trajan;
 }
 
 h1 {
@@ -52,6 +53,7 @@ p {
   padding: 2rem 2rem;
   margin: auto;
   width: 25rem;
+  height: 40rem;
   font-size: 2rem;
 }
 
@@ -78,8 +80,8 @@ button:hover {
 }
 
 .img {
-  max-width: 20rem;
-  max-height: 20rem;
+  width: 20rem;
+  height: 20rem;
 }
 
 #api-response,
