@@ -78,3 +78,25 @@ button:hover {
 #filter-response {
   font-size: 10rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .operatorCard {
+    height: 40rem;
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 810px) {
+  .operatorCard {
+    height: 40rem;
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 390px) {
+  h1 {
+    font-size: 5rem;
+  }
+  .operatorCard {
+    height: 40rem;
+    width: 25rem;
+  }
+}
