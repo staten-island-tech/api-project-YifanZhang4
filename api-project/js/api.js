@@ -3,7 +3,7 @@ import { DOMSelectors } from "./dom";
 const loadCharacters = async () => {
   try {
     const res = await fetch(`https://rhodesapi.cyclic.app/api/operator`);
-    if (res.status < 200 || res.stats > 299) {
+    if (res.status < 200 || res.status > 299) {
       throw Error(res.status);
     } else {
       const operatorlist = await res.json();
